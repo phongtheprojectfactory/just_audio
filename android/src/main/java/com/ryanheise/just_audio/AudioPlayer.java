@@ -69,6 +69,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Locale;
 
 @androidx.media3.common.util.UnstableApi
 public class AudioPlayer implements MethodCallHandler, Player.Listener, MetadataOutput {
@@ -960,7 +961,7 @@ public class AudioPlayer implements MethodCallHandler, Player.Listener, Metadata
         // fragment. e.g.  https://somewhere.com/somestream?x=etc#.m3u8
         String fragment = uri.getFragment();
         String filename = fragment != null && fragment.contains(".") ? fragment : uri.getPath();
-        return filename.replaceAll("^.*\\.", "").toLowerCase();
+        return filename.replaceAll("^.*\\.", "").toLowerCase(Locale.ROOT); // Specify Locale.ROOT
     }
 
     public void play(Result result) {
