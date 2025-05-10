@@ -278,6 +278,14 @@ public class AudioPlayer implements MethodCallHandler, Player.Listener, Metadata
             updateCurrentIndex();
             break;
         }
+        case Player.DISCONTINUITY_REASON_INTERNAL:
+        case Player.DISCONTINUITY_REASON_REMOVE:
+        case Player.DISCONTINUITY_REASON_SEEK_ADJUSTMENT:
+        case Player.DISCONTINUITY_REASON_SILENCE_SKIP:
+        case Player.DISCONTINUITY_REASON_SKIP:
+            break;
+        default:
+            break;
         broadcastImmediatePlaybackEvent();
     }
 
