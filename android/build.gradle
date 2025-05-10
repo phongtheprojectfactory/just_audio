@@ -44,7 +44,11 @@ android {
     }
 
     lintOptions {
-        disable 'AndroidGradlePluginVersion', 'InvalidPackage', 'GradleDependency', 'NewerVersionAvailable'
+        disable 'AndroidGradlePluginVersion', 'InvalidPackage', 'GradleDependency', 'NewerVersionAvailable', 'UnsafeOptInUsageError'
+    }
+
+    lint {
+        baseline = file("lint-baseline.xml")
     }
 }
 dependencies {

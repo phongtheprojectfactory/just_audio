@@ -70,6 +70,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+@androidx.media3.common.util.UnstableApi
 public class AudioPlayer implements MethodCallHandler, Player.Listener, MetadataOutput {
     public static final int ERROR_ABORT = 10000000;
 
